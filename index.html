@@ -1,115 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Yogananda - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Icon Library (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode">
+<body>
+  <header>
+    <nav>
+      <div class="logo"><span class="logo-icon">🧑‍💻</span></div>
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('about')">About</a></li>
+        <li><a href="#" onclick="showSection('skills')">Skills</a></li>
+        <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+        <li><a href="#" onclick="showSection('certifications')">Certifications</a></li>
+        <li><a href="#" onclick="showSection('achievements')">Achievements</a></li>
+        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <nav>
-    <button onclick="showSection('home')">Home</button>
-    <button onclick="showSection('about')">About</button>
-    <button onclick="showSection('skills')">Skills</button>
-    <button onclick="showSection('projects')">Projects</button>
-    <button onclick="showSection('certifications')">Certifications</button>
-    <button onclick="showSection('achievements')">Achievements</button>
-    <button onclick="showSection('contact')">Contact</button>
-  </nav>
+  <main>
+    <!-- HOME -->
+    <section id="home" class="section active">
+      <div class="profile-card">
+        <div class="profile-avatar">
+          <img src="avatar.png" alt="Profile Avatar">
+        </div>
+        <div class="profile-info">
+          <span class="greeting">👋 Hello!</span>
+          <h1>Yogananda</h1>
+          <div class="role">Front-end developer · UI designer</div>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/Yogananda25" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Yogananda25" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="content-card">
+        <h2>About Me</h2>
+        <p>B.Tech in Computer Science and Engineering (AIML), Alliance University, Bengaluru, Karnataka</p>
+        <ul class="about-list">
+          <li><i class="fas fa-graduation-cap"></i> Year of Graduation: 2026</li>
+          <li><i class="fas fa-certificate"></i> CGPA: 8.42</li>
+          <li><i class="fas fa-school"></i> 12th: Sri Chaitanya Techno School, 81%</li>
+          <li><i class="fas fa-school"></i> 10th: Kendriya Vidyalaya Gooty, 85.6%</li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="content-card">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div><i class="fab fa-python"></i> Python</div>
+          <div><i class="fab fa-java"></i> Java</div>
+          <div><i class="fas fa-database"></i> MySQL</div>
+          <div><i class="fab fa-github"></i> Git & GitHub</div>
+          <div><i class="fab fa-linux"></i> Linux (Basics)</div>
+          <div><i class="fas fa-cloud"></i> Google Cloud Platform</div>
+          <div><i class="fab fa-html5"></i> HTML</div>
+          <div><i class="fab fa-css3-alt"></i> CSS</div>
+          <div><i class="fab fa-js"></i> JavaScript</div>
+          <div><i class="fas fa-chart-bar"></i> Power BI</div>
+          <div><i class="fab fa-microsoft"></i> Excel & Word</div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="content-card">
+        <h2>Projects</h2>
+        <ul class="projects-list">
+          <li>
+            <strong>Flower Recognition Using CNN</strong><br>
+            Python, TensorFlow, Matplotlib, Google Colab
+          </li>
+          <li>
+            <strong>Modern IoT based Hydroponic System</strong><br>
+            Arduino, EC, PH Sensor, Temperature Sensor
+          </li>
+          <li>
+            <strong>Demand Forecasting with Power BI</strong><br>
+            Power BI, DAX
+          </li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section">
+      <div class="content-card">
+        <h2>Certifications</h2>
+        <ul>
+          <li>Crash Course on Python – Coursera (2024)</li>
+          <li>Building Generative AI-Powered Applications with Python – Coursera (2024)</li>
+          <li>CertNexus Certified Artificial Intelligence Practitioner – Coursera (2024)</li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section">
+      <div class="content-card">
+        <h2>Achievements & Participation</h2>
+        <ul>
+          <li>Presented paper on modern agriculture at ICISSC 2024</li>
+          <li>Workshop on Computer Vision by Sahaj AI Software</li>
+          <li>HackerRank: 3★ Python, 2★ Java</li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="content-card contact-card">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+          <div>
+            <i class="fas fa-envelope"></i>
+            <span>your.email@example.com</span>
+          </div>
+          <div>
+            <i class="fab fa-linkedin"></i>
+            <span>linkedin.com/in/Yogananda25</span>
+          </div>
+          <div>
+            <i class="fab fa-github"></i>
+            <span>github.com/Yogananda25</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <span>&copy; 2025 Yogananda. All rights reserved.</span>
+  </footer>
 
-  <div id="home" class="section">
-     <div class="card">
-    <h1>Your Name</h1>
-    <p>B.Tech in Computer Science and Engineering (AIML)</p>
-    <p>Alliance University, Bengaluru, Karnataka</p>
-    <p>Year of Graduation: 2026 | CGPA: 8.42</p>
-     </div>
-  </div>
+  <script>
+    // Navigation toggle for mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.onclick = () => {
+      navLinks.classList.toggle('nav-open');
+      navToggle.classList.toggle('open');
+    };
 
-  <div id="about" class="section" style="display:none;">
-   <div class="card">
-    <h2>About Me</h2>
-    <p>EDUCATION</p>
-    <p>Pursuing Bachelors- Alliance University, Bengaluru, KARNATAKA</p>
-    <p>Bachelor of Technology - Computer Science and Engineering</p>
-    <p>Year of Graduation: 2026 | CGPA: [8.42]</p>
-    <p>12th Grade (HSC/PUC) Sri Chaitanya Techno School, Vijayawada ANDHRA PRADESH | CBSE | Year: 2022 | Percentage: 81%</p>
-    <p>10th Grade (SSLC) Kendriya Vidyalaya Gooty, Anantapur ANDHRA PRADESH | CBSE | Year: 2020 | Percentage: 85.6</p>
-    <p>[Placeholder 1]</p>
-    <p>[Placeholder 2]</p>
-   </div>
-  </div>
+    // Section navigation
+    function showSection(sectionId) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+      // If on mobile, close nav after click
+      navLinks.classList.remove('nav-open');
+      navToggle.classList.remove('open');
+    }
+    // By default, Home is shown
 
-  <div id="skills" class="section" style="display:none;">
-   <div class="card">
-    <h2>Skills</h2>
-    <p>TECHNICAL SKILLS</p>
-    <ol>
-      <li>Programming Languages: Python, Java, C(basics)</li>
-      <li>Technologies and Platform: Microsoft Excel, Word, Power BI.</li>
-      <li>Database Technologies: MySQL.</li>
-      <li>Tools/Platforms: Git, GitHub, Linux(basics), VS Code</li>
-      <li>Cloud & Others: Google cloud platform.</li>
-    </ol>
-     <p>[Placeholder 3]</p>
-    </div>
-  </div>
-
-  <div id="projects" class="section" style="display:none;">
-   <div class="card">
-    <h2>Projects</h2>
-    <p>ACADEMIC PROJECTS</p>
-    <ol>
-      <li>Flower Recognition Using CNN – Python, TensorFlow, Matplotlib, GoogleColab.</li>
-      <li>Modern Agriculture IOT based Hydroponic system – Arduino, EC, Ph sensor, Temperature sensor</li>
-      <li>Demand Forecasting using Power BI – Power BI, DAX.</li>
-    </ol>
-    <p>[Placeholder 4]</p>
-   </div>
-  </div>
-
-   <div id="certifications" class="section" style="display:none;">
-    <div class="card">
-    <h2>Certifications</h2>
-    <p>CERTIFICATIONS</p>
-    <ol>
-      <li>Crash course on python – Coursera –2024</li>
-      <li>Building Generative AI-Powered Applications with Python– Coursera – 2024</li>
-      <li>CertNexus Certified Artificial Intelligence Practitioner – Coursera –2024</li>
-    </ol>
-    <p>[Placeholder 5]</p>
-    </div>
-  </div>
-
-  <div id="achievements" class="section" style="display:none;">
-   <div class="card">
-    <h2>Achievements</h2>
-    <p>ACHIEVEMENTS & PARTICIPATIONS</p>
-    <ol>
-      <li>Presented paper on advancing modern agriculture: environmental control and efficiency through hydroponic systems at ICISSC – 2024</li>
-      <li>Sahaj AI Software Private Ltd | Workshop organized by Sahaj software at Alliance university| Topic: Computer Vision</li>
-      <li>3★ on Hacker Rank (Python)</li>
-      <li>2 ★ on Hacker Rank (Java)</li>
-    </ol>
-     <p>[Placeholder 6]</p>
-    </div>
-  </div>
-
-  <div id="contact" class="section" style="display:none;">
-   <div class="card">
-    <h2>Contact</h2>
-    <p>Add your contact information here.</p>
-     <p>[Placeholder 7]</p>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-
+    // Keyboard navigation (optional)
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        navLinks.classList.remove('nav-open');
+        navToggle.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
