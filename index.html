@@ -11,54 +11,50 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Animated SVG Gradient Background -->
   <div class="animated-bg">
-    <svg id="hero-svg" viewBox="0 0 1440 680" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#8e6fff"/>
-          <stop offset="100%" stop-color="#4b35a3"/>
-        </linearGradient>
-      </defs>
-      <path id="blob1"
-        d="M0,240 C180,360 360,0 720,160 C1080,320 1260,80 1440,240 L1440,680 L0,680 Z"
-        fill="url(#grad1)" opacity="0.55">
-        <animate attributeName="d" dur="12s" repeatCount="indefinite"
-          values="M0,240 C180,360 360,0 720,160 C1080,320 1260,80 1440,240 L1440,680 L0,680 Z;
-                  M0,200 C200,340 340,80 720,120 C1100,160 1260,320 1440,120 L1440,680 L0,680 Z;
-                  M0,240 C180,360 360,0 720,160 C1080,320 1260,80 1440,240 L1440,680 L0,680 Z"/>
-      </path>
-    </svg>
+    <!-- SVG/Gradient background here if needed -->
   </div>
+
+  <!-- Theme switcher (top-right desktop, bottom-right mobile) -->
   <button id="theme-switch" title="Switch theme" aria-label="Switch theme">
     <i class="fas fa-moon"></i>
   </button>
+
   <header>
-    <nav>
+    <!-- Desktop NAV -->
+    <nav class="desktop-nav">
       <div class="logo">
         <span class="logo-icon"><i class="fa-solid fa-code"></i></span>
         <span class="logo-text">Yogananda</span>
       </div>
-      <button class="nav-toggle" aria-label="toggle navigation">
-        <span class="hamburger"></span>
-      </button>
       <ul class="nav-links">
-        <li><a href="#" onclick="showSection('home')">Home</a></li>
-        <li><a href="#" onclick="showSection('about')">About</a></li>
-        <li><a href="#" onclick="showSection('skills')">Skills</a></li>
-        <li><a href="#" onclick="showSection('projects')">Projects</a></li>
-        <li><a href="#" onclick="showSection('certifications')">Certifications</a></li>
-        <li><a href="#" onclick="showSection('achievements')">Achievements</a></li>
-        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+        <li><a href="#" onclick="showSection('home')" class="tab" id="tab-home">Home</a></li>
+        <li><a href="#" onclick="showSection('about')" class="tab" id="tab-about">About</a></li>
+        <li><a href="#" onclick="showSection('skills')" class="tab" id="tab-skills">Skills</a></li>
+        <li><a href="#" onclick="showSection('projects')" class="tab" id="tab-projects">Projects</a></li>
+        <li><a href="#" onclick="showSection('certifications')" class="tab" id="tab-certifications">Certifications</a></li>
+        <li><a href="#" onclick="showSection('achievements')" class="tab" id="tab-achievements">Achievements</a></li>
+        <li><a href="#" onclick="showSection('contact')" class="tab" id="tab-contact">Contact</a></li>
       </ul>
     </nav>
+    <!-- Mobile Tab Bar -->
+    <nav class="mobile-tabbar">
+      <a href="#" onclick="showSection('home')" class="tab" id="tabbar-home"><span>Home</span></a>
+      <a href="#" onclick="showSection('about')" class="tab" id="tabbar-about"><span>About</span></a>
+      <a href="#" onclick="showSection('skills')" class="tab" id="tabbar-skills"><span>Skills</span></a>
+      <a href="#" onclick="showSection('projects')" class="tab" id="tabbar-projects"><span>Projects</span></a>
+      <a href="#" onclick="showSection('certifications')" class="tab" id="tabbar-certifications"><span>Certs</span></a>
+      <a href="#" onclick="showSection('achievements')" class="tab" id="tabbar-achievements"><span>Achvmnts</span></a>
+      <a href="#" onclick="showSection('contact')" class="tab" id="tabbar-contact"><span>Contact</span></a>
+    </nav>
   </header>
+
   <main>
-    <!-- HERO SECTION with SVG Avatar -->
+    <!-- HOME -->
     <section id="home" class="section active">
       <div class="profile-card glassmorphism animate-in">
         <div class="profile-img">
-          <!-- Custom SVG Avatar Example -->
+          <!-- Custom SVG Avatar (no face) -->
           <svg width="150" height="150" viewBox="0 0 150 150">
             <circle cx="75" cy="75" r="70" fill="#8e6fff" opacity="0.15"/>
             <circle cx="75" cy="68" r="44" fill="#fff"/>
@@ -71,11 +67,11 @@
         <div class="profile-info">
           <span class="greeting">👋 Hi, I'm</span>
           <h1>Gandla Yogananda Kumar</h1>
-          <div class="role">Artificial intelligence and Machine learning</div>
+          <div class="role">Artificial Intelligence and Machine Learning</div>
           <div class="profile-details">
-            <span><i class="fa-solid fa-graduation-cap"></i>B.tech Alliace University</span>
-            <span><i class="fa-solid fa-location-dot"></i> Bengaluru,India</span>
-            <span><i class="fa-regular fa-calendar"></i>2026</span>
+            <span><i class="fa-solid fa-graduation-cap"></i> B.tech Alliance University</span>
+            <span><i class="fa-solid fa-location-dot"></i> Bengaluru, India</span>
+            <span><i class="fa-regular fa-calendar"></i> 2026</span>
           </div>
           <div class="social-links">
             <a href="https://linkedin.com/in/Yogananda25" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -84,10 +80,6 @@
           </div>
         </div>
       </div>
-      <!-- SVG Wave Divider -->
-      <svg class="divider-svg" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0,40 Q480,100 960,20 Q1200,0 1440,60 L1440,90 L0,90 Z" fill="#141622" opacity="0.85"/>
-      </svg>
     </section>
     <!-- ABOUT -->
     <section id="about" class="section">
@@ -100,9 +92,6 @@
           <li><i class="fas fa-school"></i> 10th: Kendriya Vidyalaya Gooty (CBSE), 85.6%</li>
         </ul>
       </div>
-      <svg class="divider-svg" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0,65 Q360,0 1080,70 Q1260,90 1440,50 L1440,80 L0,80 Z" fill="#191b29" opacity="0.8"/>
-      </svg>
     </section>
     <!-- SKILLS -->
     <section id="skills" class="section">
@@ -122,9 +111,6 @@
           <div><i class="fab fa-microsoft"></i> Excel/Word</div>
         </div>
       </div>
-      <svg class="divider-svg" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0,70 Q360,20 1080,80 Q1260,100 1440,60 L1440,90 L0,90 Z" fill="#1e2130" opacity="0.88"/>
-      </svg>
     </section>
     <!-- PROJECTS -->
     <section id="projects" class="section">
@@ -145,9 +131,6 @@
           </li>
         </ul>
       </div>
-      <svg class="divider-svg" viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0,60 Q480,0 960,65 Q1200,80 1440,30 L1440,70 L0,70 Z" fill="#22253a" opacity="0.93"/>
-      </svg>
     </section>
     <!-- CERTIFICATIONS -->
     <section id="certifications" class="section">
@@ -196,23 +179,23 @@
     <span>&copy; 2025 Yogananda. All rights reserved.</span>
   </footer>
   <script>
-    // Hamburger nav
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    navToggle.onclick = () => {
-      navLinks.classList.toggle('nav-open');
-      navToggle.classList.toggle('open');
-    };
-    // Section navigation
+    // Section navigation and tab highlighting
     function showSection(sectionId) {
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(sectionId).classList.add('active');
-      navLinks.classList.remove('nav-open');
-      navToggle.classList.remove('open');
+      // Highlight tab in both navs
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      let desktopTab = document.getElementById('tab-' + sectionId);
+      if (desktopTab) desktopTab.classList.add('active');
+      let mobileTab = document.getElementById('tabbar-' + sectionId);
+      if (mobileTab) mobileTab.classList.add('active');
       // Animate in
-      document.getElementById(sectionId).querySelector('.glassmorphism').classList.remove('animate-in');
-      void document.getElementById(sectionId).querySelector('.glassmorphism').offsetWidth;
-      document.getElementById(sectionId).querySelector('.glassmorphism').classList.add('animate-in');
+      if (document.getElementById(sectionId).querySelector('.glassmorphism')) {
+        let card = document.getElementById(sectionId).querySelector('.glassmorphism');
+        card.classList.remove('animate-in');
+        void card.offsetWidth;
+        card.classList.add('animate-in');
+      }
     }
     // Theme switcher
     const themeSwitch = document.getElementById('theme-switch');
@@ -221,12 +204,9 @@
       themeSwitch.innerHTML = document.body.classList.contains('light-mode')
         ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     };
-    // Keyboard nav
-    document.addEventListener('keydown', function(e) {
-      if (e.key === "Escape") {
-        navLinks.classList.remove('nav-open');
-        navToggle.classList.remove('open');
-      }
+    // Set Home tab active on load (both navs)
+    document.addEventListener('DOMContentLoaded', () => {
+      showSection('home');
     });
   </script>
 </body>
