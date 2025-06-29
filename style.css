@@ -23,40 +23,6 @@ body {
   transition: background 0.6s, color 0.6s;
 }
 
-.animated-bg {
-  position: fixed;
-  z-index: -2;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* Theme switch button */
-#theme-switch {
-  position: fixed;
-  top: 1.3em;
-  right: 1.3em;
-  z-index: 20;
-  border: none;
-  background: #23243a;
-  color: #8e6fff;
-  font-size: 1.3em;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  box-shadow: 0 2px 12px #8e6fff22;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s, color 0.3s, bottom 0.3s, top 0.3s;
-}
-#theme-switch:hover {
-  background: #8e6fff;
-  color: #fff;
-}
-
 /* Desktop nav styles */
 .desktop-nav {
   display: flex;
@@ -65,6 +31,11 @@ body {
   background: #212233;
   padding: 0 2rem;
   height: 60px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
 }
 .desktop-nav .nav-links {
   display: flex;
@@ -109,7 +80,6 @@ body {
 .mobile-tabbar {
   display: none;
 }
-
 @media (max-width: 900px) {
   .profile-card, .content-card, .glassmorphism {
     max-width: 97vw;
@@ -158,19 +128,34 @@ body {
     background: #8e6fff22;
     color: #8e6fff;
   }
-  /* Move the theme switch to bottom right as floating button */
-  #theme-switch {
-    top: auto;
-    right: 1.1em;
-    bottom: 72px;
-    left: auto;
-    background: #23243a;
-    color: #8e6fff;
-    box-shadow: 0 2px 12px #8e6fff22;
-  }
 }
 
-/* Content section styles (reuse your previous styles for cards, grid, etc) */
+/* Floating Theme Switch Button (FAB) - always at bottom right */
+#theme-switch-fab {
+  position: fixed;
+  right: 1.3em;
+  bottom: 80px;
+  z-index: 99;
+  border: none;
+  background: #23243a;
+  color: #8e6fff;
+  font-size: 1.5em;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  box-shadow: 0 2px 15px #8e6fff33;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+}
+#theme-switch-fab:hover {
+  background: #8e6fff;
+  color: #fff;
+}
+
+/* Profile Card & Content Section Styles */
 .glassmorphism {
   background: var(--card-bg);
   border-radius: var(--border-radius);
@@ -209,16 +194,21 @@ body {
   align-items: center;
   gap: 2.2rem;
   flex-wrap: wrap;
+  background: rgba(36,38,58,0.7);
+  border-radius: 24px;
+  box-shadow: 0 6px 36px #0003;
+  border: 1.5px solid #8e6fff22;
+  padding: 2.2rem 2rem;
 }
 .profile-img {
-  flex: 0 0 140px;
+  flex: 0 0 110px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .profile-img svg {
-  width: 150px;
-  height: 150px;
+  width: 110px;
+  height: 110px;
   display: block;
 }
 .profile-info {
@@ -227,32 +217,35 @@ body {
 }
 .greeting {
   display: inline-block;
-  background: var(--accent);
+  background: #8e6fff;
   color: #fff;
   border-radius: 12px;
-  padding: 0.24em 1em;
+  padding: 0.18em 0.8em;
   font-size: 1.1em;
-  margin-bottom: 0.7em;
+  margin-bottom: 0.6em;
   font-weight: 500;
   letter-spacing: 1px;
 }
 .profile-info h1 {
-  font-size: 2.1rem;
+  font-size: 1.85rem;
   margin: 0.2em 0 0.2em 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
 }
 .profile-info .role {
-  color: var(--accent);
-  font-size: 1.19em;
-  font-weight: 600;
+  color: #8e6fff;
+  font-size: 1.09em;
+  font-weight: 700;
   margin-bottom: 0.7em;
   font-family: 'Montserrat', sans-serif;
 }
+.highlight {
+  color: #8e6fff;
+}
 .profile-details {
-  color: var(--text-secondary);
-  font-size: 1.09em;
+  color: #bbb;
+  font-size: 1.01em;
   margin-bottom: 1em;
   display: flex;
   gap: 1em;
@@ -264,22 +257,23 @@ body {
   gap: .45em;
 }
 .social-links {
-  margin-top: 0.8em;
+  margin-top: 0.7em;
 }
 .social-links a {
-  font-size: 1.5em;
-  margin-right: 0.85em;
-  color: var(--text-secondary);
-  background: #1e1e2e;
-  padding: 0.35em 0.5em;
+  font-size: 1.3em;
+  margin-right: 0.68em;
+  color: #22223a;
+  background: #e3d3ff;
+  padding: 0.28em 0.43em;
   border-radius: 14px;
   transition: color .22s, background .25s, transform .3s;
   position: relative;
+  box-shadow: 0 2px 8px #8e6fff13;
 }
 .social-links a:hover {
-  color: var(--accent);
-  background: #2e2852;
-  transform: translateY(-2px) scale(1.09) rotate(-5deg);
+  color: #fff;
+  background: #8e6fff;
+  transform: translateY(-2px) scale(1.09) rotate(-3deg);
   box-shadow: 0 6px 18px #8e6fff33;
 }
 .content-card {
@@ -415,13 +409,15 @@ body {
 }
 
 footer {
-  background: var(--secondary-bg);
-  color: var(--text-secondary);
+  background: #23243a;
+  color: #bbb;
   text-align: center;
-  padding: 1.1em 0 1.2em 0;
+  padding: 1.2em 0 1.4em 0;
   font-size: 1em;
   letter-spacing: 0.05em;
-  margin-top: 2rem;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 11;
   border-radius: 18px 18px 0 0;
   box-shadow: 0 -4px 24px 0 rgba(30, 33, 48, 0.2);
 }
@@ -435,7 +431,7 @@ body.light-mode {
   --text-secondary: #555;
   --accent: #7d5fff;
 }
-body.light-mode #theme-switch {
+body.light-mode #theme-switch-fab {
   background: #f4f5ff;
   color: var(--accent);
 }
@@ -458,4 +454,8 @@ body.light-mode .skills-grid div:hover,
 body.light-mode .contact-grid div:hover {
   background: var(--accent);
   color: #fff;
+}
+body.light-mode footer {
+  background: #eaeaff;
+  color: #7d5fff;
 }
