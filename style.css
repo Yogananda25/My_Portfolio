@@ -1,15 +1,19 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa; /* Very light gray */
+  background-color: #121212; /* Dark background */
+  color: #fff; /* White text */
 }
 
 nav {
-  background-color: #333;
+  background-color: #212121; /* Darker navigation */
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 nav button {
-  float: left;
+  float: none;
   display: block;
   color: white;
   text-align: center;
@@ -18,12 +22,14 @@ nav button {
   border: none;
   background-color: inherit;
   cursor: pointer;
-   transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background and transform */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  flex: 1;
+  margin: 5px;
 }
 
 nav button:hover {
-  background-color: #555; /* Darker background on hover */
-  transform: translateY(-2px); /* Slight upward movement on hover */
+  background-color: #555;
+  transform: translateY(-2px);
 }
 
 .section {
@@ -31,9 +37,9 @@ nav button:hover {
 }
 
 .card {
-  background-color: #fff;
+  background-color: #1e1e1e; /* Darker card background */
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust shadow for dark mode */
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -47,4 +53,27 @@ a {
 
 a:hover {
   color: #0056b3; /* Darker color on hover */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  nav button {
+    margin: 0;
+  }
+  .section {
+    padding: 10px;
+  }
+  .card {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  p {
+    font-size: 1em;
+  }
 }
