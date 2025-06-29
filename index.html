@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="animated-bg">
   <!-- Floating Theme Switch Button -->
   <button id="theme-switch-fab" title="Switch theme" aria-label="Switch theme">
     <i class="fas fa-moon"></i>
@@ -23,60 +23,53 @@
         <span class="logo-text">Yogananda</span>
       </div>
       <ul class="nav-links">
-        <li><a href="#" onclick="showSection('home')" class="tab" id="tab-home">Home</a></li>
-        <li><a href="#" onclick="showSection('about')" class="tab" id="tab-about">About</a></li>
-        <li><a href="#" onclick="showSection('skills')" class="tab" id="tab-skills">Skills</a></li>
-        <li><a href="#" onclick="showSection('projects')" class="tab" id="tab-projects">Projects</a></li>
-        <li><a href="#" onclick="showSection('certifications')" class="tab" id="tab-certifications">Certifications</a></li>
-        <li><a href="#" onclick="showSection('achievements')" class="tab" id="tab-achievements">Achievements</a></li>
-        <li><a href="#" onclick="showSection('contact')" class="tab" id="tab-contact">Contact</a></li>
+        <li><a href="#hero" class="tab active">Home</a></li>
+        <li><a href="#about" class="tab">About</a></li>
+        <li><a href="#skills" class="tab">Skills</a></li>
+        <li><a href="#projects" class="tab">Projects</a></li>
+        <li><a href="#certifications" class="tab">Certifications</a></li>
+        <li><a href="#achievements" class="tab">Achievements</a></li>
+        <li><a href="#contact" class="tab">Contact</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <!-- HOME -->
-    <section id="home" class="section active">
-      <div class="profile-card glassmorphism animate-in">
-        <div class="profile-img">
-          <svg width="120" height="120" viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="56" fill="#7a5af8" opacity="0.17"/>
-            <circle cx="60" cy="54" r="36" fill="#fff"/>
-            <ellipse cx="60" cy="90" rx="30" ry="16" fill="#7a5af8" opacity="0.21"/>
-            <ellipse cx="60" cy="56" rx="24" ry="28" fill="#eae8ff"/>
-            <ellipse cx="60" cy="82" rx="18" ry="10" fill="#dedcff"/>
-            <ellipse cx="60" cy="46" rx="12" ry="13" fill="#a992fe"/>
-          </svg>
+    <!-- Hero Section -->
+    <section id="hero" class="section active">
+      <div class="hero-card glassmorphism animate-in">
+        <div class="hero-img">
+          <img src="avatar.png" alt="Profile" class="avatar"/>
         </div>
-        <div class="profile-info">
+        <div class="hero-info">
           <span class="greeting">👋 Hi, I'm</span>
           <h1>Gandla Yogananda Kumar</h1>
-          <div class="role highlight">Artificial Intelligence and Machine Learning</div>
+          <div class="role highlight" id="animated-role">AI & Machine Learning Enthusiast</div>
           <div class="profile-details">
-            <span><i class="fa-solid fa-graduation-cap"></i> B.tech Alliance University</span>
+            <span><i class="fa-solid fa-graduation-cap"></i> B.Tech, Alliance University</span>
             <span><i class="fa-solid fa-location-dot"></i> Bengaluru, India</span>
             <span><i class="fa-regular fa-calendar"></i> 2026</span>
           </div>
           <div class="social-links">
-            <a href="https://linkedin.com/in/Yogananda25" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Yogananda25" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
       </div>
     </section>
-    <!-- ABOUT -->
+    <!-- About Section -->
     <section id="about" class="section">
       <div class="content-card glassmorphism animate-in">
         <h2>About Me</h2>
-        <p class="about-lead">I'm an enthusiastic developer passionate about building beautiful, efficient digital experiences and interfaces.</p>
+        <p class="about-lead">I'm an enthusiastic developer passionate about building beautiful, efficient digital experiences and interfaces. I love AI, ML, and creative coding.</p>
         <ul class="about-list">
-          <li><i class="fas fa-university"></i> B.Tech - Computer Science & Engineering (AIML), Alliance University, CGPA: 8.42</li>
-          <li><i class="fas fa-school"></i> 12th: Sri Chaitanya Techno School (CBSE), 81%</li>
-          <li><i class="fas fa-school"></i> 10th: Kendriya Vidyalaya Gooty (CBSE), 85.6%</li>
+          <li><i class="fas fa-university"></i> B.Tech - Computer Science & Engineering (AIML), Alliance University</li>
+          <li><i class="fas fa-school"></i> 12th: Sri Chaitanya Techno School (CBSE)</li>
+          <li><i class="fas fa-school"></i> 10th: Kendriya Vidyalaya Gooty (CBSE)</li>
         </ul>
       </div>
     </section>
-    <!-- SKILLS -->
+    <!-- Skills Section -->
     <section id="skills" class="section">
       <div class="content-card glassmorphism animate-in">
         <h2>Skills</h2>
@@ -85,7 +78,7 @@
           <div><i class="fab fa-java"></i> Java</div>
           <div><i class="fas fa-database"></i> MySQL</div>
           <div><i class="fab fa-github"></i> Git & GitHub</div>
-          <div><i class="fab fa-linux"></i> Linux (Basics)</div>
+          <div><i class="fab fa-linux"></i> Linux</div>
           <div><i class="fas fa-cloud"></i> Google Cloud</div>
           <div><i class="fab fa-html5"></i> HTML</div>
           <div><i class="fab fa-css3-alt"></i> CSS</div>
@@ -95,7 +88,7 @@
         </div>
       </div>
     </section>
-    <!-- PROJECTS -->
+    <!-- Projects Section -->
     <section id="projects" class="section">
       <div class="content-card glassmorphism animate-in">
         <h2>Projects</h2>
@@ -115,7 +108,7 @@
         </ul>
       </div>
     </section>
-    <!-- CERTIFICATIONS -->
+    <!-- Certifications Section -->
     <section id="certifications" class="section">
       <div class="content-card glassmorphism animate-in">
         <h2>Certifications</h2>
@@ -126,7 +119,7 @@
         </ul>
       </div>
     </section>
-    <!-- ACHIEVEMENTS -->
+    <!-- Achievements Section -->
     <section id="achievements" class="section">
       <div class="content-card glassmorphism animate-in">
         <h2>Achievements & Participation</h2>
@@ -137,7 +130,7 @@
         </ul>
       </div>
     </section>
-    <!-- CONTACT -->
+    <!-- Contact Section -->
     <section id="contact" class="section">
       <div class="content-card glassmorphism animate-in contact-card">
         <h2>Contact</h2>
@@ -162,23 +155,24 @@
     <span>© 2025 Yogananda. All rights reserved.</span>
   </footer>
   <script>
-    // Section navigation and tab highlighting
-    function showSection(sectionId) {
-      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
-      // Highlight tab in nav
-      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-      let desktopTab = document.getElementById('tab-' + sectionId);
-      if (desktopTab) desktopTab.classList.add('active');
-      // Animate in
-      if (document.getElementById(sectionId).querySelector('.glassmorphism')) {
-        let card = document.getElementById(sectionId).querySelector('.glassmorphism');
-        card.classList.remove('animate-in');
-        void card.offsetWidth;
-        card.classList.add('animate-in');
-      }
-    }
-    // Theme switcher (FAB only)
+    // Smooth scroll and tab highlight
+    document.querySelectorAll('.nav-links .tab').forEach(tab => {
+      tab.onclick = function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        const section = document.querySelector(this.getAttribute('href'));
+        if(section) section.scrollIntoView({behavior: 'smooth'});
+      };
+    });
+    // Animated role text
+    const roles = ["AI & Machine Learning Enthusiast", "Creative Coder", "Problem Solver", "Tech Explorer"];
+    let roleIdx = 0;
+    setInterval(() => {
+      roleIdx = (roleIdx + 1) % roles.length;
+      document.getElementById('animated-role').textContent = roles[roleIdx];
+    }, 2200);
+    // Theme switcher
     function toggleTheme() {
       document.body.classList.toggle('light-mode');
       const btn = document.getElementById('theme-switch-fab');
@@ -186,11 +180,6 @@
         ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     }
     document.getElementById('theme-switch-fab').onclick = toggleTheme;
-
-    // Set Home tab active on load
-    document.addEventListener('DOMContentLoaded', () => {
-      showSection('home');
-    });
   </script>
 </body>
 </html>
