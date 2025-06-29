@@ -11,9 +11,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Floating Theme Switch Button -->
+  <button id="theme-switch-fab" title="Switch theme" aria-label="Switch theme">
+    <i class="fas fa-moon"></i>
+  </button>
+  <!-- Top Tab Bar Navigation (always at the top) -->
   <header>
-    <!-- Desktop NAV -->
-    <nav class="desktop-nav">
+    <nav class="top-tabbar">
       <div class="logo">
         <span class="logo-icon"><i class="fa-solid fa-code"></i></span>
         <span class="logo-text">Yogananda</span>
@@ -28,16 +32,6 @@
         <li><a href="#" onclick="showSection('contact')" class="tab" id="tab-contact">Contact</a></li>
       </ul>
     </nav>
-    <!-- Mobile Tab Bar -->
-    <nav class="mobile-tabbar">
-      <a href="#" onclick="showSection('home')" class="tab" id="tabbar-home"><span>Home</span></a>
-      <a href="#" onclick="showSection('about')" class="tab" id="tabbar-about"><span>About</span></a>
-      <a href="#" onclick="showSection('skills')" class="tab" id="tabbar-skills"><span>Skills</span></a>
-      <a href="#" onclick="showSection('projects')" class="tab" id="tabbar-projects"><span>Projects</span></a>
-      <a href="#" onclick="showSection('certifications')" class="tab" id="tabbar-certifications"><span>Certs</span></a>
-      <a href="#" onclick="showSection('achievements')" class="tab" id="tabbar-achievements"><span>Achvmnts</span></a>
-      <a href="#" onclick="showSection('contact')" class="tab" id="tabbar-contact"><span>Contact</span></a>
-    </nav>
   </header>
   <main>
     <!-- HOME -->
@@ -45,12 +39,11 @@
       <div class="profile-card glassmorphism animate-in">
         <div class="profile-img">
           <svg width="120" height="120" viewBox="0 0 120 120">
-            <!-- SVG avatar illustration -->
-            <circle cx="60" cy="60" r="56" fill="#8e6fff" opacity="0.15"/>
+            <circle cx="60" cy="60" r="56" fill="#9e7bff" opacity="0.18"/>
             <circle cx="60" cy="54" r="36" fill="#fff"/>
-            <ellipse cx="60" cy="90" rx="30" ry="16" fill="#8e6fff" opacity="0.23"/>
-            <ellipse cx="60" cy="56" rx="24" ry="28" fill="#e3d3ff"/>
-            <ellipse cx="60" cy="82" rx="18" ry="10" fill="#d1d3ee"/>
+            <ellipse cx="60" cy="90" rx="30" ry="16" fill="#be9dfc" opacity="0.27"/>
+            <ellipse cx="60" cy="56" rx="24" ry="28" fill="#f1eaff"/>
+            <ellipse cx="60" cy="82" rx="18" ry="10" fill="#e3d3ee"/>
             <ellipse cx="60" cy="46" rx="12" ry="13" fill="#bbaaf2"/>
           </svg>
         </div>
@@ -165,12 +158,6 @@
       </div>
     </section>
   </main>
-
-  <!-- Floating Theme Switch Button (bottom right, both desktop and mobile) -->
-  <button id="theme-switch-fab" title="Switch theme" aria-label="Switch theme">
-    <i class="fas fa-moon"></i>
-  </button>
-
   <footer>
     <span>© 2025 Yogananda. All rights reserved.</span>
   </footer>
@@ -179,12 +166,10 @@
     function showSection(sectionId) {
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(sectionId).classList.add('active');
-      // Highlight tab in both navs
+      // Highlight tab in nav
       document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
       let desktopTab = document.getElementById('tab-' + sectionId);
       if (desktopTab) desktopTab.classList.add('active');
-      let mobileTab = document.getElementById('tabbar-' + sectionId);
-      if (mobileTab) mobileTab.classList.add('active');
       // Animate in
       if (document.getElementById(sectionId).querySelector('.glassmorphism')) {
         let card = document.getElementById(sectionId).querySelector('.glassmorphism');
@@ -193,7 +178,7 @@
         card.classList.add('animate-in');
       }
     }
-    // Theme switcher (FAB only, remove top-right button)
+    // Theme switcher (FAB only)
     function toggleTheme() {
       document.body.classList.toggle('light-mode');
       const btn = document.getElementById('theme-switch-fab');
@@ -202,7 +187,7 @@
     }
     document.getElementById('theme-switch-fab').onclick = toggleTheme;
 
-    // Set Home tab active on load (both navs)
+    // Set Home tab active on load
     document.addEventListener('DOMContentLoaded', () => {
       showSection('home');
     });
