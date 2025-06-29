@@ -5,21 +5,12 @@
   <title>Yogananda - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="animated-bg">
-    <!-- SVG/Gradient background here if needed -->
-  </div>
-
-  <!-- Theme switcher (top-right desktop, bottom-right mobile) -->
-  <button id="theme-switch" title="Switch theme" aria-label="Switch theme">
-    <i class="fas fa-moon"></i>
-  </button>
-
   <header>
     <!-- Desktop NAV -->
     <nav class="desktop-nav">
@@ -48,26 +39,25 @@
       <a href="#" onclick="showSection('contact')" class="tab" id="tabbar-contact"><span>Contact</span></a>
     </nav>
   </header>
-
   <main>
     <!-- HOME -->
     <section id="home" class="section active">
       <div class="profile-card glassmorphism animate-in">
         <div class="profile-img">
-          <!-- Custom SVG Avatar (no face) -->
-          <svg width="150" height="150" viewBox="0 0 150 150">
-            <circle cx="75" cy="75" r="70" fill="#8e6fff" opacity="0.15"/>
-            <circle cx="75" cy="68" r="44" fill="#fff"/>
-            <ellipse cx="75" cy="110" rx="36" ry="22" fill="#8e6fff" opacity="0.23"/>
-            <ellipse cx="75" cy="71" rx="30" ry="34" fill="#e3d3ff"/>
-            <ellipse cx="75" cy="101" rx="24" ry="13" fill="#d1d3ee"/>
-            <ellipse cx="75" cy="61" rx="18" ry="17" fill="#bbaaf2"/>
+          <svg width="120" height="120" viewBox="0 0 120 120">
+            <!-- SVG avatar illustration -->
+            <circle cx="60" cy="60" r="56" fill="#8e6fff" opacity="0.15"/>
+            <circle cx="60" cy="54" r="36" fill="#fff"/>
+            <ellipse cx="60" cy="90" rx="30" ry="16" fill="#8e6fff" opacity="0.23"/>
+            <ellipse cx="60" cy="56" rx="24" ry="28" fill="#e3d3ff"/>
+            <ellipse cx="60" cy="82" rx="18" ry="10" fill="#d1d3ee"/>
+            <ellipse cx="60" cy="46" rx="12" ry="13" fill="#bbaaf2"/>
           </svg>
         </div>
         <div class="profile-info">
           <span class="greeting">👋 Hi, I'm</span>
           <h1>Gandla Yogananda Kumar</h1>
-          <div class="role">Artificial Intelligence and Machine Learning</div>
+          <div class="role highlight">Artificial Intelligence and Machine Learning</div>
           <div class="profile-details">
             <span><i class="fa-solid fa-graduation-cap"></i> B.tech Alliance University</span>
             <span><i class="fa-solid fa-location-dot"></i> Bengaluru, India</span>
@@ -175,8 +165,14 @@
       </div>
     </section>
   </main>
+
+  <!-- Floating Theme Switch Button (bottom right, both desktop and mobile) -->
+  <button id="theme-switch-fab" title="Switch theme" aria-label="Switch theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
   <footer>
-    <span>&copy; 2025 Yogananda. All rights reserved.</span>
+    <span>© 2025 Yogananda. All rights reserved.</span>
   </footer>
   <script>
     // Section navigation and tab highlighting
@@ -197,13 +193,15 @@
         card.classList.add('animate-in');
       }
     }
-    // Theme switcher
-    const themeSwitch = document.getElementById('theme-switch');
-    themeSwitch.onclick = function() {
+    // Theme switcher (FAB only, remove top-right button)
+    function toggleTheme() {
       document.body.classList.toggle('light-mode');
-      themeSwitch.innerHTML = document.body.classList.contains('light-mode')
+      const btn = document.getElementById('theme-switch-fab');
+      btn.innerHTML = document.body.classList.contains('light-mode')
         ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    };
+    }
+    document.getElementById('theme-switch-fab').onclick = toggleTheme;
+
     // Set Home tab active on load (both navs)
     document.addEventListener('DOMContentLoaded', () => {
       showSection('home');
